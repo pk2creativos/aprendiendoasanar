@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Curso de Salud Integrativa | Instituto Sana para Sanar</title>
+  <meta name="description" content="La ciencia detrás de todo lo que sientes. Programa online de 6 meses para entender tu cuerpo y revertir la inflamación crónica.">
+
+  <!-- SEO y Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Programa de Salud Integrativa | Dra. Sandra Evangelisti">
+  <meta property="og:description" content="Descubrí cómo revertir la inflamación y el estrés con evidencia científica. 6 meses, online y en vivo.">
+  <meta property="og:url" content="https://aprendiendoasanar.com/lp/master-pine/">
+  <link rel="canonical" href="https://aprendiendoasanar.com/lp/master-pine/">
+
+  <!-- Tipografías: Playfair Display para elegancia/autoridad, Outfit para modernidad -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400;1,800&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================================
+       DISEÑO MASTERCLASS PREMIUM (Light & Elegant)
+       ========================================================================= */
+    :root {
+      /* Palette Premium Light */
+      --color-bg: #FFFFFF;
+      --color-surface-1: #FCFAF8; /* Ivory muy sutil */
+      --color-surface-2: #F2F5F3; /* Sage tint */
+      --color-surface-border: #EAECEB;
+      
+      --color-text-main: #141A17; /* Charcoal/Green casi negro */
+      --color-text-muted: #5E6963;
+      
+      --color-accent: #BA7D38; /* Bronce/Dorado elegante */
+      --color-accent-hover: #9E652B;
+      --color-accent-glow: rgba(186, 125, 56, 0.15);
+      
+      --color-emerald: #163628; /* Verde muy profundo premium */
+      --color-emerald-light: #2B6E50;
+      --color-emerald-glow: rgba(43, 110, 80, 0.1);
+
+      --font-display: 'Playfair Display', serif;
+      --font-sans: 'Outfit', sans-serif;
+      
+      --ease: cubic-bezier(0.25, 1, 0.5, 1);
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-bg);
+      color: var(--color-text-main);
+      line-height: 1.6;
+      font-size: 17px;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .container--sm {
+      max-width: 760px;
+    }
+
+    /* Gradients y Fondos */
+    .glow-bg {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--color-emerald-glow) 0%, transparent 60%);
+      filter: blur(80px);
+      z-index: 0;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    /* Navegación */
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      z-index: 100;
+      padding: 20px 0;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--color-surface-border);
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--color-text-main);
+    }
+    .logo span {
+      color: var(--color-accent);
+      font-weight: 400;
+    }
+
+    /* Botones */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-family: var(--font-sans);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s var(--ease);
+      border: 1px solid transparent;
+      z-index: 2;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn--primary {
+      background: var(--color-emerald);
+      color: #fff;
+      box-shadow: 0 8px 30px var(--color-emerald-glow);
+    }
+
+    .btn--primary:hover {
+      background: var(--color-text-main);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn--secondary {
+      background: transparent;
+      color: var(--color-emerald);
+      border-color: var(--color-emerald);
+    }
+
+    .btn--secondary:hover {
+      background: var(--color-surface-2);
+    }
+
+    .btn--sm {
+      padding: 10px 24px;
+      font-size: 0.85rem;
+    }
+
+    /* Tipografía Común */
+    .eyebrow {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--color-emerald);
+      font-weight: 800;
+      margin-bottom: 16px;
+      display: inline-block;
+      background: var(--color-surface-2);
+      padding: 6px 16px;
+      border-radius: 50px;
+    }
+
+    h1, h2.title {
+      font-family: var(--font-display);
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-weight: 400;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+      color: var(--color-emerald);
+    }
+    
+    h1 .destacado {
+      font-weight: 900;
+      color: var(--color-text-main);
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--color-accent);
+      font-weight: 800;
+    }
+
+    h2.title {
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 24px;
+      color: var(--color-text-main);
+    }
+
+    .subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.25rem);
+      color: var(--color-text-muted);
+      max-width: 640px;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+      font-weight: 400;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      padding-top: 180px;
+      padding-bottom: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--color-surface-border);
+      background: var(--color-surface-1);
+    }
+
+    .hero .glow-bg {
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .metrics-row {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 60px;
+      flex-wrap: wrap;
+    }
+
+    .metric {
+      background: var(--color-bg);
+      border: 1px solid var(--color-surface-border);
+      padding: 16px 28px;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    .metric i {
+      font-size: 1.2rem;
+      color: var(--color-accent);
+    }
+
+    .metric span {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--color-emerald);
+    }
+
+    /* SECTION COMUNES */
+    section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .bg-surface {
+      background: var(--color-surface-1);
+      border-top: 1px solid var(--color-surface-border);
+      border-bottom: 1px solid var(--color-surface-border);
+    }
+
+    /* THE PROBLEM SECTION */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .problem-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .problem-points {
+      margin-top: 40px;
+    }
+
+    .point {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+      background: var(--color-bg);
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 1px solid var(--color-surface-border);
+      transition: all 0.3s var(--ease);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    
+    .point:hover {
+      border-color: var(--color-accent);
+      transform: translateX(10px);
+    }
+
+    .point-icon {
+      flex-shrink: 0;
+      width: 40px; height: 40px;
+      background: var(--color-surface-2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-emerald);
+      font-weight: 800;
+    }
+
+    .point h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--color-emerald);
+    }
+
+    .point p {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+    }
+
+    .image-placeholder {
+      aspect-ratio: 4/5;
+      background: linear-gradient(145deg, var(--color-surface-2), var(--color-bg));
+      border: 1px solid var(--color-surface-border);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .image-placeholder::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle, transparent 50%, rgba(22, 54, 40, 0.05));
+    }
+
+    /* THE PROGRAM SECTION */
+    .curriculum-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 64px auto;
+    }
+
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .module-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-surface-border);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s var(--ease);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    }
+
+    .module-card:hover {
+      background: var(--color-surface-1);
+      border-color: var(--color-accent);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .module-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 3px;
+      background: transparent;
+      transition: background 0.4s;
+    }
+
+    .module-card:hover::before {
+      background: var(--color-accent);
+    }
+
+    .module-number {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+      display: block;
+    }
+    
+    .module-date {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .module-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--color-emerald);
+      line-height: 1.2;
+    }
+
+    .module-card p {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .module-topics li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--color-text-main);
+      margin-bottom: 8px;
+    }
+
+    .module-topics li::before {
+      content: '✓';
+      color: var(--color-emerald-light);
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    /* BIO SECTION */
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    
+    .bio-photo {
+      aspect-ratio: 4/5;
+      background: var(--color-surface-2);
+      border-radius: var(--radius);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      position: relative;
+    }
+
+    /* PRICING & GEOLOCATION */
+    #pricing {
+      text-align: center;
+    }
+    
+    .pricing-box {
+      background: var(--color-bg);
+      border: 2px solid var(--color-emerald);
+      box-shadow: 0 20px 60px rgba(22, 54, 40, 0.08);
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 56px 40px;
+      border-radius: var(--radius);
+      position: relative;
+    }
+
+    .pricing-box .badge {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--color-accent);
+      color: #fff;
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .price-value-container {
+      margin: 32px 0;
+      min-height: 80px; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .loading-price {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.5; }
+      50% { opacity: 1; }
+      100% { opacity: 0.5; }
+    }
+
+    .price-display {
+      display: none; 
+    }
+
+    .price-display.visible {
+      display: block;
+    }
+
+    .price-amount {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--color-emerald);
+    }
+    
+    .price-cuotas {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 8px;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .price-sub {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    .reservation-fee {
+      background: var(--color-surface-2);
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      color: var(--color-text-main);
+      font-weight: 500;
+      margin-top: 24px;
+      border: 1px solid var(--color-surface-border);
+    }
+    
+    .reservation-fee span {
+      font-weight: 800;
+      color: var(--color-emerald);
+    }
+
+    .pricing-includes {
+      text-align: left;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--color-surface-border);
+    }
+
+    .pricing-includes li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--color-text-main);
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    .pricing-includes li i {
+      color: var(--color-emerald-light);
+    }
+    
+    .form-postulate {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--color-bg);
+      padding: 40px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      border-top: 1px solid var(--color-surface-border);
+    }
+
+    @media (max-width: 900px) {
+      .problem-grid, .bio-grid { grid-template-columns: 1fr; }
+      .bio-photo { max-width: 400px; margin: 0 auto; aspect-ratio: 1; }
+      h1 { font-size: 2.2rem; }
+      h2.title { font-size: 1.8rem; }
+      .metrics-row { flex-direction: column; gap: 12px; align-items: stretch; }
+      .metric { justify-content: center; }
+      header .btn { display: none; } /* Ocultar CTA en móvil */
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="../assets/Logo%20Instituto%20Sana%20para%20Sanar%20Negro.svg" alt="Instituto Sana para Sanar" style="height: 52px; width: auto;">
+      </a>
+      <a href="#postularme" class="btn btn--primary btn--sm">Reservar lugar</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="glow-bg"></div>
+    <div class="container container--sm">
+      <span class="eyebrow" style="background: var(--color-emerald); color: white;">Comenzamos el miércoles 3 de Junio</span>
+      <h1>EL <span class="destacado">CURSO</span> definitivo de<br><em>Salud Integrativa</em></h1>
+      <p class="subtitle">
+        Aprende la ciencia detrás de todo lo que sientes. Un programa intensivo online de 6 meses para entender tu cuerpo, revertir la inflamación crónica y recuperar tu vitalidad.
+      </p>
+      
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="#postularme" class="btn btn--primary">Postularme para reservar lugar</a>
+        <a href="#el-programa" class="btn btn--secondary">Ver el Programa</a>
+      </div>
+
+      <div class="metrics-row">
+        <div class="metric">
+          <i>✦</i>
+          <span>Dra. Sandra Evangelisti</span>
+        </div>
+        <div class="metric">
+          <i>✦</i>
+          <span>Clases en vivo los miércoles (2hs)</span>
+        </div>
+        <div class="metric">
+          <i>✦</i>
+          <span>100% online en vivo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-surface" id="problema">
+    <div class="container problem-grid">
+      <div class="problem-content">
+        <span class="eyebrow">¿Te resulta familiar?</span>
+        <h2 class="title" style="font-weight: 800;">Tus análisis dicen que "estás perfecto"... pero te sientes horrible.</h2>
+        <p style="color: var(--color-text-muted); font-size: 1.1rem;">
+          La medicina convencional busca enfermedades declaradas, pero ignora los procesos silenciosos que consumen tu energía día a día. Estar "dentro de los rangos" no significa estar sano.
+        </p>
+
+        <div class="problem-points">
+          <div class="point">
+            <div class="point-icon">01</div>
+            <div>
+              <h3>Cansancio crónico y burnout</h3>
+              <p>Te despiertas exhausto. Las tardes se hacen eternas y el fin de semana no alcanza para recuperar la energía. No es agotamiento normal, es tu biología pidiendo auxilio.</p>
+            </div>
+          </div>
+          <div class="point">
+            <div class="point-icon">02</div>
+            <div>
+              <h3>Inflamación y síntomas dispersos</h3>
+              <p>Hinchazón constante, caída de cabello, dolores migratorios. Te tratan cada síntoma por separado tapando el problema de raíz con medicamentos que generan efectos secundarios.</p>
+            </div>
+          </div>
+          <div class="point">
+            <div class="point-icon">03</div>
+            <div>
+              <h3>"Todo es por estrés"</h3>
+              <p>El diagnóstico fácil. Pero, ¿alguien te ha enseñado científicamente cómo el estrés altera tus hormonas, arruina tu intestino, y sobre todo, cómo revertir verdaderamente ese daño?</p>
+            </div>
+          </div>
+        </div>
+        
+        <div style="margin-top: 32px;">
+          <a href="https://wa.me/5491127328123?text=Hola,%20quisiera%20más%20información%20sobre%20el%20Programa%20de%20Salud%20Integrativa..." class="btn btn--secondary" target="_blank" style="padding: 12px 24px;">💬 ¿Dudas? Consultar por WhatsApp</a>
+        </div>
+      </div>
+      
+      <div>
+        <div class="image-placeholder">
+          (Ilustración PINE / Botánica)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIO SANDRA -->
+  <section id="bio">
+    <div class="container bio-grid">
+      <div class="bio-photo">
+        <div style="position:absolute; top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--color-text-muted);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;border:1px solid var(--color-surface-border);border-radius:var(--radius);">
+          Foto Dra. Sandra
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">De quién vas a aprender:</span>
+        <h2 class="title">Dra. Sandra Evangelisti</h2>
+        
+        <p style="font-size: 1.1rem; margin-bottom: 24px; color: var(--color-text-muted);">
+          Médica egresada de la Universidad de Buenos Aires con más de 30 años de trayectoria en hospitales de alta complejidad.
+        </p>
+        
+        <p style="margin-bottom: 16px;">
+          Especialista en Pediatría y Neonatología, realizó rotaciones en la Universidad de Miami junto a referentes mundiales en cuidado respiratorio neonatal. Tras tres décadas de salvar vidas en urgencias y terapia intensiva, entendió que faltaba una pieza entera del rompecabezas.
+        </p>
+        
+        <p style="margin-bottom: 32px;">
+          Profundizó en neurociencias, epigenética, psiconeuroinmunología (PINE) y medicina ortomolecular. Hoy integra toda esa formación avalada por la ciencia real en un solo lugar: <strong>este programa intensivo.</strong>
+        </p>
+        
+        <div style="background: var(--color-surface-2); padding: 24px 32px; border-left: 4px solid var(--color-accent); border-radius: 0 var(--radius) var(--radius) 0;">
+          <em style="font-family: var(--font-display); font-size: 1.25rem; color: var(--color-emerald); display: block; margin-bottom: 12px; font-weight: 600;">
+            "Después de 30 años en emergencias, comprobé que la verdadera medicina empieza antes de que el cuerpo se rompa. Inicia al comprender el impacto del estrés y qué necesita cada célula para recuperar su equilibrio."
+          </em>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-surface" id="el-programa">
+    <div class="container">
+      <div class="curriculum-header">
+        <span class="eyebrow">El Programa</span>
+        <h2 class="title">Una inmersión profunda de 6 meses.</h2>
+        <p class="subtitle" style="margin: 0 auto; font-size: 1.1rem;">
+          Un currículum paso a paso diseñado meticulosamente. 100% libre de relleno, enfocado en fisiología, medicina ortomolecular y hábitos reales.
+        </p>
+      </div>
+
+      <div class="modules-grid">
+        <!-- M1 -->
+        <div class="module-card">
+          <span class="module-number">MÓDULO 01</span>
+          <span class="module-date">Junio 2026 · 4 Clases</span>
+          <h3>Estrés y Biología</h3>
+          <p>Comprende por qué tu cuerpo se queda atascado en "modo supervivencia", alterando tu sistema inmune y hormonas.</p>
+          <ul class="module-topics">
+            <li>Psiconeuroinmunología (PINE)</li>
+            <li>Homeostasis y desgaste celular</li>
+            <li>Impacto del estrés sostenido</li>
+          </ul>
+        </div>
+        
+        <!-- M2 -->
+        <div class="module-card">
+          <span class="module-number">MÓDULO 02</span>
+          <span class="module-date">Julio 2026 · 4 Clases</span>
+          <h3>Intestino e Inflamación</h3>
+          <p>Tu intestino programa tu cerebro. La verdad sobre la nutrición antiinflamatoria que la industria no te cuenta.</p>
+          <ul class="module-topics">
+            <li>El microbioma humano</li>
+            <li>SIBO y Permeabilidad Intestinal</li>
+            <li>Ultraprocesados vs Alimentos Reales</li>
+          </ul>
+        </div>
+
+        <!-- M3 -->
+        <div class="module-card">
+          <span class="module-number">MÓDULO 03</span>
+          <span class="module-date">Agosto 2026 · 4 Clases</span>
+          <h3>Medicina Ortomolecular</h3>
+          <p>Descubre los suplementos, adaptógenos y vitaminas necesarias porque hoy los alimentos vienen vacíos de nutrientes.</p>
+          <ul class="module-topics">
+            <li>Déficits silenciosos (Magnesio, Omega 3)</li>
+            <li>Adaptógenos validados por ciencia</li>
+            <li>Terapias para resetear la salud</li>
+          </ul>
+        </div>
+
+        <!-- M4 -->
+        <div class="module-card">
+          <span class="module-number">MÓDULO 04</span>
+          <span class="module-date">Octubre 2026 · 4 Clases</span>
+          <h3>Trauma y Nervio Vago</h3>
+          <p>Tu cuerpo guarda un archivo biológico de experiencias. Aprende a desconectar las memorias de dolor y desgaste celular.</p>
+          <ul class="module-topics">
+            <li>Teoría Polivagal en la práctica</li>
+            <li>Huellas biológicas infantiles</li>
+            <li>Técnicas de regulación vagal</li>
+          </ul>
+        </div>
+
+        <!-- M5 -->
+        <div class="module-card">
+          <span class="module-number">MÓDULO 05</span>
+          <span class="module-date">Noviembre 2026 · 4 Clases</span>
+          <h3>Ritmos y Naturaleza</h3>
+          <p>El ritmo circadiano, el sueño y el movimiento no son lujo, son medicina primordial para desinflamar el cuerpo de forma gratuita.</p>
+          <ul class="module-topics">
+            <li>Fisiología del ejercicio curativo</li>
+            <li>El sueño y tu reloj biológico</li>
+            <li>Sol, vitamina D y grounding clínico</li>
+          </ul>
+        </div>
+
+        <!-- M6 -->
+        <div class="module-card">
+          <span class="module-number">MÓDULO 06</span>
+          <span class="module-date">Diciembre 2026 · 4 Clases</span>
+          <h3>El Plan que sí funciona</h3>
+          <p>Integramos PINE, nutrición y hábitos a través de casos reales. Tu hoja de ruta definitiva para el resto de tu vida.</p>
+          <ul class="module-topics">
+            <li>Casos clínicos integradores</li>
+            <li>Construir hábitos inquebrantables</li>
+            <li>Tu plan personal para el futuro</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 64px;">
+        <p style="color: var(--color-text-muted); margin-bottom: 20px; font-size: 1.05rem;">¿Tienes consultas sobre cómo se adapta el currículum a tu caso?</p>
+        <a href="https://wa.me/5491127328123?text=Hola,%20quisiera%20más%20información%20sobre%20el%20Programa%20de%20Salud%20Integrativa..." class="btn btn--secondary" target="_blank">Escríbenos por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="postularme">
+    <div class="container container--sm">
+      <div id="pricing" class="pricing-box">
+        <span class="badge">Inscripciones Abiertas</span>
+        <h2 class="title" style="margin-bottom: 12px; font-weight: 900;">Asegura tu lugar</h2>
+        <p style="color: var(--color-text-muted); font-size: 1.1rem;">Inversión mensual de nuestro programa de 6 meses.</p>
+        
+        <div class="price-value-container">
+          <!-- Este loader se mostrará mientras el JS averigua la IP -->
+          <div class="loading-price" id="loadingPrice">Calculando tarifa regional...</div>
+          
+          <!-- ARGENTINA -->
+          <div class="price-display" id="priceAR">
+            <span class="price-cuotas">6 CUOTAS MENSUALES DE</span>
+            <div class="price-amount">$120.000</div>
+            <div class="price-sub">Pesos Argentinos (Con ajuste mensual)</div>
+            <div class="reservation-fee">
+              Reserva tu vacante hoy abonando una seña de <span>$50.000 ARS</span>
+            </div>
+          </div>
+
+          <!-- MÉXICO -->
+          <div class="price-display" id="priceMX">
+            <span class="price-cuotas">6 CUOTAS MENSUALES DE</span>
+            <div class="price-amount">$2,800</div>
+            <div class="price-sub">Pesos Mexicanos</div>
+            <div class="reservation-fee">
+              Reserva tu vacante hoy abonando una seña de <span>$500 MXN</span>
+            </div>
+          </div>
+
+          <!-- EUROPA -->
+          <div class="price-display" id="priceEU">
+            <span class="price-cuotas">6 CUOTAS MENSUALES DE</span>
+            <div class="price-amount">150 €</div>
+            <div class="price-sub">Euros</div>
+            <div class="reservation-fee">
+              Reserva tu vacante hoy abonando una seña de <span>50 €</span>
+            </div>
+          </div>
+
+          <!-- RESTO DEL MUNDO -->
+          <div class="price-display" id="priceROW">
+            <span class="price-cuotas">6 CUOTAS MENSUALES DE</span>
+            <div class="price-amount">150 USD</div>
+            <div class="price-sub">Dólares Americanos</div>
+            <div class="reservation-fee">
+              Reserva tu vacante hoy abonando una seña de <span>$50 USD</span>
+            </div>
+          </div>
+        </div>
+
+        <ul class="pricing-includes">
+          <li><i>✦</i> Acceso completo a los 6 meses de formación</li>
+          <li><i>✦</i> 48 horas totales de clases en vivo</li>
+          <li><i>✦</i> Acceso a todas las grabaciones en campus virtual</li>
+          <li><i>✦</i> Certificado oficial otorgado por la Dra. Evangelisti</li>
+        </ul>
+
+        <a href="#link-al-formulario-n8n" class="btn btn--primary" style="width: 100%; font-size: 1.15rem; padding: 22px;">Quiero postularme y reservar mi lugar</a>
+        <div class="form-postulate">Serás redirigido para completar tus datos e iniciar tu reserva.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SOBRE EL INSTITUTO
+       ============================================================ -->
+  <section class="bg-surface" id="instituto" style="padding: 100px 0;">
+    <div class="container" style="max-width: 900px; text-align: center;">
+      <span class="eyebrow">Respaldo Institucional</span>
+      <h2 class="title" style="margin-bottom: 24px;">Instituto Sana para Sanar</h2>
+      
+      <p style="font-size: 1.15rem; color: var(--color-text-muted); margin-bottom: 32px; line-height: 1.8;">
+        Dirigido por <strong>León Fu</strong> y coordinado por <strong>Daniel Meade</strong>, nuestro instituto ha formado a miles de personas a través de conferencias, seminarios y formaciones de talla internacional enfocadas en el despertar de la consciencia y la sanación integral.
+      </p>
+      
+      <p style="font-size: 1.05rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 0;">
+        Hoy, nos encontramos en una fase de expansión: abrimos nuestras puertas a otros grandes referentes y profesionales de la salud. Es un orgullo para nosotros organizar e invitar a la Dra. <strong>Sandra Evangelisti</strong> para dictar este programa intensivo, asegurando el mismo sello de excelencia clínica y humana que caracteriza a todos nuestros cursos.
+      </p>
+    </div>
+  </section>
+
+  <footer style="background: var(--color-bg); padding: 80px 0 40px; border-top: 1px solid var(--color-surface-border);">
+    <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 50px;">
+      <div>
+        <span style="display: block; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--color-text-muted); margin-bottom: 12px;">Organiza y Certifica</span>
+        <img src="../assets/Logo%20Instituto%20Sana%20para%20Sanar%20Negro.svg" alt="Instituto Sana para Sanar" style="height: 64px; margin-bottom: 24px;">
+        <p style="color: var(--color-text-muted); font-size: 1rem; line-height: 1.7;">Innovando hacia una cosmovisión terapéutica adaptada al Siglo XXI.</p>
+      </div>
+      <div>
+        <h4 style="font-family: var(--font-display); color: var(--color-emerald); font-size: 1.3rem; margin-bottom: 20px;">Contacto Directo</h4>
+        <p style="margin-bottom: 12px;">
+          <a href="https://wa.me/5491127328123?text=Hola,%20quisiera%20más%20información%20sobre%20el%20Programa%20de%20Salud%20Integrativa..." target="_blank" style="color: var(--color-accent); font-weight: 700; font-size: 1.1rem;">
+            +54 9 11 2732 8123
+          </a>
+        </p>
+        <p style="color: var(--color-text-muted);">hola@aprendiendoasanar.com</p>
+      </div>
+      <div>
+        <h4 style="font-family: var(--font-display); color: var(--color-emerald); font-size: 1.3rem; margin-bottom: 20px;">Comunidad</h4>
+        <div style="display: flex; gap: 16px;">
+          <a href="https://youtube.com/leonfu" target="_blank" aria-label="YouTube" style="width: 44px; height: 44px; border: 1px solid var(--color-surface-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-text-muted); transition: all 0.2s;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+          </a>
+          <a href="https://instagram.com/leonfu.terapeuta" target="_blank" aria-label="Instagram" style="width: 44px; height: 44px; border: 1px solid var(--color-surface-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-text-muted); transition: all 0.2s;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://facebook.com/leonfu.terapeuta" target="_blank" aria-label="Facebook" style="width: 44px; height: 44px; border: 1px solid var(--color-surface-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-text-muted); transition: all 0.2s;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="https://tiktok.com/@leonfu.terapeuta" target="_blank" aria-label="TikTok" style="width: 44px; height: 44px; border: 1px solid var(--color-surface-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-text-muted); transition: all 0.2s;">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="border-top: 1px solid var(--color-surface-border); padding-top: 30px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; color: var(--color-text-muted); font-size: 0.85rem;">
+      <p>Copyright © 2026 Instituto Sana para Sanar. Todos los Derechos Reservados.</p>
+      <p><a href="https://aprendiendoasanar.com/politica-de-privacidad/" target="_blank" style="text-decoration: underline;">Reglamento y Política de Privacidad</a></p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT PARA GEOLOCALIZACION Y PRECIOS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Endpoint gratuito y sencillo que retorna la ubicación por IP.
+      fetch("https://ipapi.co/json/")
+        .then(response => response.json())
+        .then(data => {
+          const country = data.country; // Código ISO 3166-1 alpha-2, ej: "AR", "MX", "ES"
+          
+          // Ocultar el loader
+          const loader = document.getElementById('loadingPrice');
+          if(loader) loader.style.display = 'none';
+
+          // Lógica de visualización
+          if (country === "AR") {
+            document.getElementById('priceAR').classList.add('visible');
+          } else if (country === "MX") {
+            document.getElementById('priceMX').classList.add('visible');
+          } else if (
+            // Lista basica de paises de la zona Euro / CEE
+            ["ES", "FR", "IT", "DE", "PT", "NL", "BE", "AT", "GR", "IE", "FI"].includes(country)
+          ) {
+            document.getElementById('priceEU').classList.add('visible');
+          } else {
+            // Resto del mundo
+            document.getElementById('priceROW').classList.add('visible');
+          }
+        })
+        .catch(error => {
+          console.error("Error obteniendo ubicación, mostrando por defecto ROW", error);
+          const loader = document.getElementById('loadingPrice');
+          if(loader) loader.style.display = 'none';
+          // Fallback en caso de adblockers o error de API: mostramos Resto del mundo (USD)
+          document.getElementById('priceROW').classList.add('visible');
+        });
+    });
+  </script>
+</body>
+</html>
