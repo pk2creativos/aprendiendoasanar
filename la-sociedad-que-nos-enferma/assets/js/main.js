@@ -109,11 +109,11 @@
 
       fetch(WEBHOOK_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify(payload),
-        mode: 'cors'
+        mode: 'no-cors'
       })
-        .then((res) => {
+        .then(() => {
           // Permitimos opaque/cors fail silencioso: igual redirigimos a /gracias/
           // siempre que no haya sido un error de red total.
           window.location.href = THANKS_URL;
