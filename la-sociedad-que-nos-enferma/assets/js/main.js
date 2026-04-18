@@ -13,14 +13,14 @@
 
   // ---------- CONFIG ----------
   // TODO: Reemplazar por la URL real del webhook de n8n cuando Daniel la provea.
-  const WEBHOOK_URL = 'https://REEMPLAZAR-CON-URL-DE-N8N.example.com/webhook/leon-fu-ebook';
+  const WEBHOOK_URL = 'https://orquesta.mktparatodos.com/webhook/lm/ebook-sociedad';
 
   const THANKS_URL = 'gracias/';
 
   // País → región para precios
   const EU_COUNTRIES = new Set([
-    'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT',
-    'LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','CH','GB'
+    'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT',
+    'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'CH', 'GB'
   ]);
 
   // ---------- HELPERS ----------
@@ -83,9 +83,9 @@
       ev.preventDefault();
       setStatus('', null);
 
-      const nombre   = form.nombre.value.trim();
-      const email    = form.email.value.trim();
-      const legal    = form.legal.checked;
+      const nombre = form.nombre.value.trim();
+      const email = form.email.value.trim();
+      const legal = form.legal.checked;
       const telefono = itiInstance ? itiInstance.getNumber() : phoneInput.value.trim();
       const telefonoValido = itiInstance ? itiInstance.isValidNumber() : telefono.length >= 6;
 
