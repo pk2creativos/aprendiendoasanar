@@ -1,0 +1,2116 @@
+/* =========================================================
+   La sociedad que nos enferma — León Fu
+   Instituto Sana para Sanar®
+   Paleta: Azul noche + Ámbar cálido (Paleta D)
+========================================================== */
+
+/* -------- TOKENS -------- */
+:root {
+  /* Paleta */
+  --c-navy: #0F2A4A;
+  --c-amber: #E2AD45;
+  --c-sky: #6BB0D0;
+  --c-ivory: #FAF6F0;
+  --c-white: #FFFFFF;
+  --c-black: #000000;
+
+  /* Tipografía */
+  --ff-serif: 'Lora', Georgia, 'Times New Roman', serif;
+  --ff-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  /* Escala responsiva con clamp */
+  --fs-h1: clamp(2rem, 5vw + 1rem, 3.5rem);
+  /* 32→56 */
+  --fs-h2: clamp(1.625rem, 2.5vw + 1rem, 2.25rem);
+  /* 26→36 */
+  --fs-h3: clamp(1.375rem, 1.2vw + 1rem, 1.75rem);
+  /* 22→28 */
+  --fs-subtitle: clamp(1.375rem, 1.2vw + 1rem, 1.875rem);
+  /* 22→30 */
+  --fs-body: clamp(1.125rem, 0.4vw + 1rem, 1.25rem);
+  /* 18→20 */
+  --fs-btn: 1.125rem;
+  /* 18 */
+
+  /* Espaciado */
+  --pad-section-mobile: 60px;
+  --pad-section-desktop: 100px;
+  --container: 1200px;
+  --container-narrow: 820px;
+
+  --nav-h: 72px;
+}
+
+/* -------- RESET -------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: var(--nav-h);
+}
+
+body {
+  margin: 0;
+  font-family: var(--ff-sans);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: var(--c-black);
+  background: var(--c-ivory);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* -------- LAYOUT -------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 40px;
+  }
+}
+
+/* -------- TYPOGRAPHY -------- */
+.h2,
+.h3 {
+  font-family: var(--ff-serif);
+  line-height: 1.25;
+  margin: 0 0 0.6em;
+}
+
+.h2 {
+  font-size: var(--fs-h2);
+  font-weight: 600;
+}
+
+.h2--bold {
+  font-weight: 700;
+}
+
+.h2--light {
+  color: var(--c-white);
+}
+
+.h3 {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+}
+
+.h3--amber {
+  color: var(--c-amber);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--ff-sans);
+  font-size: 0.875rem;
+  /* 14 */
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  margin-bottom: 18px;
+  background: var(--c-black);
+  color: var(--c-white);
+  border-radius: 2px;
+}
+
+.eyebrow--amber {
+  background: var(--c-amber);
+  color: var(--c-black);
+}
+
+.subtitle-italic {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--fs-subtitle);
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  margin: 0 0 1.5em;
+}
+
+.prose p {
+  margin: 0 0 1.2em;
+  font-size: var(--fs-body);
+  line-height: 1.7;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose--light p {
+  color: var(--c-white);
+}
+
+.prose__strong {
+  font-weight: 700;
+  font-size: 1.05em;
+}
+
+.link-underline {
+  color: var(--c-navy);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.link-underline:hover {
+  opacity: 0.7;
+}
+
+/* -------- BUTTONS -------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-sans);
+  font-size: var(--fs-btn);
+  font-weight: 700;
+  text-align: center;
+  padding: 14px 22px;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+  line-height: 1.2;
+  min-height: 48px;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(15, 42, 74, 0.18);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--amber {
+  background: var(--c-amber);
+  color: var(--c-black);
+}
+
+.btn--navy {
+  background: var(--c-navy);
+  color: var(--c-white);
+}
+
+.btn--sky {
+  background: var(--c-sky);
+  color: var(--c-black);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn--large {
+  font-size: 1.25rem;
+  padding: 18px 32px;
+  min-height: 56px;
+}
+
+/* -------- NAV -------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--c-navy);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding: 12px 20px;
+  min-height: var(--nav-h);
+}
+
+.nav__logo {
+  flex-shrink: 0;
+}
+
+.nav__logo img {
+  height: 44px;
+  width: auto;
+}
+
+.nav__links {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 4px 0;
+}
+
+.nav__links::-webkit-scrollbar {
+  display: none;
+}
+
+.nav__links .btn {
+  font-size: 0.9375rem;
+  /* 15 */
+  padding: 10px 16px;
+  min-height: 40px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .nav__inner {
+    padding: 10px 16px;
+  }
+
+  .nav__logo img {
+    height: 38px;
+  }
+
+  .nav__links .btn {
+    font-size: 0.875rem;
+    padding: 9px 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .nav__inner {
+    flex-wrap: wrap;
+  }
+
+  .nav__links {
+    width: 100%;
+    margin-left: 0;
+    gap: 8px;
+  }
+
+  .nav__links .btn {
+    flex: 1 1 auto;
+    font-size: 0.8125rem;
+    padding: 8px 10px;
+  }
+}
+
+/* -------- SECTIONS BASE -------- */
+section {
+  padding: var(--pad-section-mobile) 0;
+}
+
+@media (min-width: 900px) {
+  section {
+    padding: var(--pad-section-desktop) 0;
+  }
+}
+
+/* -------- HERO (BLOQUE 1) -------- */
+.hero {
+  background: var(--c-navy);
+  color: var(--c-white);
+  text-align: center;
+  padding: clamp(64px, 12vw, 140px) 0;
+}
+
+.hero__title {
+  font-family: var(--ff-serif);
+  font-weight: 700;
+  font-size: var(--fs-h1);
+  line-height: 1.15;
+  margin: 0 0 24px;
+  color: var(--c-white);
+  letter-spacing: -0.01em;
+}
+
+.hero__subtitle {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--fs-subtitle);
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  color: var(--c-amber);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* -------- MUNDOS (BLOQUE 1 — 4 preguntas) -------- */
+.mundos {
+  background: var(--c-ivory);
+}
+
+.mundos__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 820px) {
+  .mundos__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+}
+
+.mundo {
+  padding: 32px 28px;
+  border-radius: 8px;
+  font-size: var(--fs-body);
+  line-height: 1.6;
+}
+
+.mundo p {
+  margin: 0;
+}
+
+.mundo__label {
+  display: block;
+  font-family: var(--ff-sans);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  opacity: 0.85;
+}
+
+.mundo--amber {
+  background: var(--c-amber);
+  color: var(--c-black);
+}
+
+.mundo--white {
+  background: var(--c-white);
+  color: var(--c-black);
+  border: 1px solid rgba(15, 42, 74, 0.12);
+}
+
+.mundo--sky {
+  background: var(--c-sky);
+  color: var(--c-black);
+}
+
+.mundo--navy {
+  background: var(--c-navy);
+  color: var(--c-white);
+}
+
+.mundo--navy .mundo__label {
+  color: var(--c-amber);
+  opacity: 1;
+}
+
+.mundos__cierre {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: var(--fs-subtitle);
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  text-align: center;
+  margin: 48px auto 0;
+  max-width: 720px;
+}
+
+/* -------- EXPLICACIÓN (BLOQUE 2) -------- */
+.explicacion {
+  background: var(--c-ivory);
+  padding-top: 0;
+}
+
+.explicacion .h2 {
+  color: var(--c-navy);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* -------- EBOOK (BLOQUE 3) -------- */
+.ebook {
+  background: var(--c-amber);
+  color: var(--c-black);
+}
+
+.ebook__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .ebook__grid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+  }
+}
+
+.ebook__copy .h2 {
+  color: var(--c-black);
+}
+
+.ebook__copy .eyebrow {
+  background: var(--c-navy);
+  color: var(--c-white);
+}
+
+.ebook__copy em {
+  font-style: italic;
+}
+
+.ebook__form {
+  background: var(--c-white);
+  padding: 32px 28px;
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(15, 42, 74, 0.12);
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  font-family: var(--ff-sans);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: var(--c-black);
+}
+
+.field__optional {
+  font-weight: 400;
+  opacity: 0.65;
+  font-size: 0.9em;
+}
+
+.field input[type="text"],
+.field input[type="tel"],
+.field input[type="email"] {
+  width: 100%;
+  font-family: var(--ff-sans);
+  font-size: 1.0625rem;
+  padding: 12px 14px;
+  border: 1.5px solid rgba(15, 42, 74, 0.25);
+  border-radius: 6px;
+  background: var(--c-white);
+  color: var(--c-black);
+  min-height: 48px;
+  transition: border-color 0.2s ease;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--c-navy);
+  box-shadow: 0 0 0 3px rgba(15, 42, 74, 0.12);
+}
+
+.field__check {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  margin: 16px 0 20px;
+  cursor: pointer;
+}
+
+.field__check input {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--c-navy);
+}
+
+.form__status {
+  margin: 14px 0 0;
+  font-size: 0.9375rem;
+  min-height: 1.2em;
+}
+
+.form__status.is-error {
+  color: #B00020;
+}
+
+.form__status.is-success {
+  color: #0B6B36;
+}
+
+/* intl-tel-input overrides */
+.iti {
+  width: 100%;
+}
+
+.iti__tel-input {
+  width: 100%;
+}
+
+/* -------- LEÓN (BLOQUE 4) -------- */
+.leon {
+  background: var(--c-white);
+}
+
+.leon__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .leon__grid {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+  }
+}
+
+.leon__copy .h2 {
+  color: var(--c-navy);
+}
+
+.leon__copy em {
+  font-style: italic;
+}
+
+.photo-placeholder {
+  background: transparent;
+  aspect-ratio: 4 / 5;
+}
+
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.leon__video {
+  margin-top: 60px;
+}
+
+.video-placeholder {
+  background: var(--c-navy);
+  color: var(--c-white);
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--ff-sans);
+  font-weight: 600;
+  padding: 20px;
+}
+
+.video-placeholder small {
+  opacity: 0.7;
+  font-weight: 400;
+  display: block;
+  margin-top: 8px;
+}
+
+.video-placeholder iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* -------- TALLER TEÓRICO (BLOQUE 5) -------- */
+.taller-teorico {
+  background: var(--c-navy);
+  color: var(--c-white);
+}
+
+.taller-teorico .eyebrow--amber {
+  margin-bottom: 20px;
+}
+
+.taller-teorico .subtitle-italic {
+  color: var(--c-amber);
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+  display: grid;
+  gap: 14px;
+}
+
+.checklist li {
+  position: relative;
+  padding: 14px 16px 14px 48px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--c-amber);
+  border-radius: 4px;
+  line-height: 1.55;
+}
+
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 20px;
+  width: 14px;
+  height: 8px;
+  border-left: 2px solid var(--c-amber);
+  border-bottom: 2px solid var(--c-amber);
+  transform: rotate(-45deg);
+}
+
+/* -------- DATA LIST (inversión, formato, etc.) -------- */
+.data-list {
+  margin: 0 0 36px;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.data-list>div {
+  padding: 18px 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+}
+
+.data-list dt {
+  font-family: var(--ff-sans);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  opacity: 0.8;
+}
+
+.data-list dd {
+  margin: 0;
+  font-size: var(--fs-body);
+  line-height: 1.5;
+}
+
+/* Data list en fondos claros */
+.taller-terapeutico .data-list>div,
+.sesion .data-list>div {
+  background: rgba(15, 42, 74, 0.06);
+}
+
+/* Price switching (controlled by JS via <body data-region>) */
+.price {
+  display: none;
+}
+
+body[data-region="AR"] .price--ar,
+body[data-region="US"] .price--us,
+body[data-region="MX"] .price--mx,
+body[data-region="EU"] .price--eu,
+body[data-region="WW"] .price--ww {
+  display: inline;
+}
+
+/* -------- TRANSICIÓN (BLOQUE 6) -------- */
+.transicion {
+  background: var(--c-ivory);
+  text-align: center;
+}
+
+.transicion .h2 {
+  color: var(--c-navy);
+}
+
+.transicion .prose {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* -------- TALLER TERAPÉUTICO (BLOQUE 7) -------- */
+.taller-terapeutico {
+  background: var(--c-white);
+}
+
+.taller-terapeutico .h2 {
+  color: var(--c-navy);
+}
+
+.pullquote {
+  margin: 40px 0;
+  padding: 40px 28px;
+  background: var(--c-navy);
+  color: var(--c-amber);
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.375rem, 2vw + 1rem, 1.875rem);
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+  text-align: center;
+  border-radius: 8px;
+  quotes: none;
+}
+
+/* -------- SESIÓN PRIVADA (BLOQUE 8) -------- */
+.sesion {
+  background: var(--c-sky);
+  color: var(--c-black);
+}
+
+.sesion .h2 {
+  color: var(--c-black);
+}
+
+.sesion .eyebrow {
+  background: var(--c-navy);
+  color: var(--c-white);
+}
+
+/* -------- CIERRE (BLOQUE 9) -------- */
+.cierre {
+  background: var(--c-navy);
+  color: var(--c-amber);
+  text-align: center;
+}
+
+.cierre__quote {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.625rem, 2.2vw + 1rem, 2rem);
+  letter-spacing: 0.03em;
+  line-height: 1.45;
+  margin: 0 auto;
+  max-width: 760px;
+  quotes: none;
+}
+
+/* -------- FOOTER -------- */
+.footer {
+  background: #081B33;
+  color: var(--c-white);
+  padding: 60px 0 32px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+}
+
+@media (min-width: 720px) {
+  .footer__grid {
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    gap: 40px;
+  }
+}
+
+.footer__logo {
+  height: 56px;
+  width: auto;
+  margin-bottom: 16px;
+}
+
+.footer__tag {
+  font-size: 0.9375rem;
+  opacity: 0.75;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.footer__col h4 {
+  font-family: var(--ff-serif);
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin: 0 0 14px;
+  color: var(--c-amber);
+}
+
+.footer__col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.footer__col a {
+  color: var(--c-white);
+  font-size: 0.9375rem;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.footer__col a:hover {
+  opacity: 1;
+  color: var(--c-amber);
+}
+
+.footer__legal {
+  margin: 48px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.875rem;
+  opacity: 0.6;
+  text-align: center;
+}
+
+/* -------- SCROLL REVEAL -------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* -------- FOCUS VISIBLE -------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--c-amber);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* =========================================================
+   V2 ADDITIONS — Cambios de prompt v2
+========================================================== */
+
+/* -------- HERO BRAND (Bloque 1) -------- */
+.hero__brand {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--c-amber);
+  margin: 0 0 18px;
+  letter-spacing: 0.04em;
+  /* El doble del subtítulo. Subtítulo base ~22→30; marca ~44→60. */
+  font-size: clamp(2.75rem, 2.4vw + 2rem, 3.75rem);
+  line-height: 1.1;
+}
+
+@media (max-width: 560px) {
+  .hero__brand {
+    font-size: clamp(2rem, 5vw + 1rem, 2.75rem);
+  }
+}
+
+/* -------- BLOQUE 3 — Ebook reestructurado -------- */
+.ebook__headline {
+  font-family: var(--ff-serif);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 2.2vw + 1rem, 2.5rem);
+  line-height: 1.25;
+  color: var(--c-black);
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto 48px;
+}
+
+@media (min-width: 900px) {
+  .ebook__headline {
+    margin-bottom: 64px;
+  }
+}
+
+.ebook .ebook__grid {
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .ebook .ebook__grid {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
+  }
+}
+
+.ebook__left {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.ebook-mockup {
+  background: transparent;
+  aspect-ratio: 400 / 520;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.ebook-mockup img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.ebook__titling {
+  text-align: center;
+}
+
+.ebook__kicker {
+  font-family: var(--ff-sans);
+  font-weight: 500;
+  font-size: 1.0625rem;
+  color: var(--c-black);
+  margin: 0 0 6px;
+}
+
+.ebook__name {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 1.6vw + 1rem, 2rem);
+  line-height: 1.25;
+  color: var(--c-black);
+  margin: 0;
+}
+
+.ebook__desc p {
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  margin: 0 0 1em;
+  color: var(--c-black);
+}
+
+.ebook__desc p:last-child {
+  margin-bottom: 0;
+}
+
+/* -------- TALLER — imagen hero de bloque -------- */
+.taller-hero {
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  min-height: 200px;
+  max-height: 480px;
+  background: transparent;
+  margin-bottom: 56px;
+}
+
+.taller-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width: 900px) {
+  .taller-hero {
+    margin-bottom: 72px;
+    aspect-ratio: 16 / 5;
+  }
+}
+
+/* Quitar padding-top de la sección cuando tiene hero integrado */
+#taller-teorico,
+#taller-terapeutico {
+  padding-top: 0;
+}
+
+/* -------- TALLER — título en 2 líneas -------- */
+.taller-title {
+  font-family: var(--ff-serif);
+  margin: 14px 0 24px;
+  line-height: 1.1;
+  color: var(--c-white);
+}
+
+.taller-title--dark {
+  color: var(--c-navy);
+}
+
+.taller-title__line1 {
+  display: block;
+  font-weight: 600;
+  font-size: clamp(1.375rem, 1.3vw + 1rem, 1.875rem);
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+}
+
+.taller-title__line2 {
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: clamp(2rem, 3.2vw + 1rem, 3.25rem);
+  line-height: 1.05;
+}
+
+/* -------- SCHEDULE — fechas y horarios -------- */
+.schedule {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(226, 173, 69, 0.35);
+  border-radius: 10px;
+  padding: 28px 24px;
+  margin: 40px 0 56px;
+  color: var(--c-white);
+}
+
+@media (min-width: 720px) {
+  .schedule {
+    padding: 36px 40px;
+  }
+}
+
+.schedule .h3 {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.schedule__intro {
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  margin: 0 0 24px;
+  color: var(--c-white);
+}
+
+.schedule__intro strong {
+  color: var(--c-amber);
+  font-weight: 700;
+}
+
+.schedule__dates {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+@media (min-width: 560px) {
+  .schedule__dates {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 24px;
+  }
+}
+
+.schedule__dates li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--c-amber);
+  border-radius: 4px;
+  font-size: 1.0625rem;
+}
+
+.schedule__dates li span {
+  font-family: var(--ff-sans);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-amber);
+  flex-shrink: 0;
+  min-width: 64px;
+}
+
+.schedule__local {
+  background: var(--c-amber);
+  color: var(--c-black);
+  padding: 18px 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0 0 24px;
+}
+
+.schedule__local-label {
+  font-family: var(--ff-sans);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+
+.schedule__local-time {
+  font-family: var(--ff-serif);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 3vw + 1rem, 3rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.schedule__local-sub {
+  font-family: var(--ff-sans);
+  font-size: 0.9375rem;
+  opacity: 0.8;
+  margin: 4px 0 0;
+}
+
+.schedule__heading {
+  font-family: var(--ff-sans);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-amber);
+  margin: 0 0 14px;
+}
+
+/* Referencias internacionales — línea inline sutil con bullets */
+.schedule__refs {
+  margin: 0;
+  font-family: var(--ff-sans);
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.schedule__refs span {
+  display: inline;
+  white-space: nowrap;
+}
+
+.schedule__refs span:not(:last-child)::after {
+  content: "•";
+  color: var(--c-amber);
+  opacity: 0.55;
+  margin: 0 10px;
+  font-weight: 700;
+}
+
+.schedule__refs strong {
+  color: var(--c-amber);
+  font-weight: 700;
+  margin-right: 4px;
+  opacity: 0.9;
+}
+
+/* -------- SYLLABUS — 8 clases -------- */
+.syllabus {
+  list-style: none;
+  counter-reset: none;
+  padding: 0;
+  margin: 0 0 36px;
+  display: grid;
+  gap: 16px;
+}
+
+.syllabus__item {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--c-amber);
+  padding: 22px 24px;
+  border-radius: 6px;
+}
+
+.syllabus__title {
+  font-family: var(--ff-serif);
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin: 0 0 10px;
+  color: var(--c-white);
+}
+
+.syllabus__num {
+  display: inline-block;
+  font-family: var(--ff-sans);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-amber);
+  background: rgba(226, 173, 69, 0.12);
+  padding: 3px 9px;
+  border-radius: 3px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.syllabus__item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+@media (min-width: 720px) {
+  .syllabus__item {
+    padding: 26px 30px;
+  }
+
+  .syllabus__title {
+    font-size: 1.375rem;
+  }
+
+  .syllabus__item p {
+    font-size: 1.0625rem;
+  }
+}
+
+/* -------- BONUS CARD (bibliografía) -------- */
+.bonus-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--c-amber);
+  color: var(--c-black);
+  border-radius: 8px;
+  margin: 0 0 56px;
+}
+
+.bonus-card__icon {
+  font-size: 1.75rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.bonus-card p {
+  margin: 0;
+  font-family: var(--ff-sans);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  line-height: 1.45;
+}
+
+/* -------- ENROLL CARD (ficha de inscripción) -------- */
+.enroll-card {
+  background: var(--c-white);
+  color: var(--c-black);
+  border: 3px solid var(--c-amber);
+  border-radius: 12px;
+  padding: 28px 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
+}
+
+@media (min-width: 720px) {
+  .enroll-card {
+    padding: 40px 44px;
+  }
+}
+
+.enroll-card--light {
+  border-color: var(--c-navy);
+  box-shadow: 0 20px 50px rgba(15, 42, 74, 0.12);
+}
+
+.enroll-card__eyebrow {
+  font-family: var(--ff-sans);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-navy);
+  background: var(--c-amber);
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 2px;
+  margin: 0 0 22px;
+}
+
+.enroll-card--light .enroll-card__eyebrow {
+  background: var(--c-navy);
+  color: var(--c-white);
+}
+
+.enroll-card__data {
+  margin: 0 0 24px;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.enroll-card__data>div {
+  padding: 16px 18px;
+  background: rgba(15, 42, 74, 0.05);
+  border-radius: 6px;
+}
+
+.enroll-card__data dt {
+  font-family: var(--ff-sans);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-navy);
+  margin-bottom: 4px;
+  opacity: 0.8;
+}
+
+.enroll-card__data dd {
+  margin: 0;
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--c-black);
+}
+
+/* -------- TRANSICIÓN (Bloque 6) agrandada -------- */
+.transicion {
+  background: var(--c-ivory);
+  text-align: center;
+  padding: clamp(48px, 7vw, 80px) 0;
+}
+
+.transicion__title {
+  font-family: var(--ff-serif);
+  font-weight: 700;
+  color: var(--c-navy);
+  font-size: clamp(2rem, 4vw + 1rem, 3.25rem);
+  line-height: 1.15;
+  margin: 0 0 28px;
+  letter-spacing: -0.01em;
+}
+
+.transicion__text {
+  font-family: var(--ff-serif);
+  font-weight: 500;
+  font-size: clamp(1.375rem, 0.8vw + 1rem, 1.75rem);
+  line-height: 1.55;
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--c-black);
+}
+
+/* -------- TALLER TERAPÉUTICO — h3 navy + approach list -------- */
+.h3--navy {
+  color: var(--c-navy);
+  margin-top: 48px;
+}
+
+.approach-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+  display: grid;
+  gap: 14px;
+}
+
+.approach-list li {
+  position: relative;
+  padding: 18px 20px 18px 56px;
+  background: rgba(15, 42, 74, 0.04);
+  border-left: 4px solid var(--c-amber);
+  border-radius: 6px;
+  line-height: 1.55;
+}
+
+.approach-list li::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 24px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--c-amber);
+  box-shadow: 0 0 0 4px rgba(226, 173, 69, 0.18);
+}
+
+.approach-list__label {
+  display: block;
+  font-family: var(--ff-serif);
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--c-navy);
+  margin-bottom: 2px;
+}
+
+.approach-list__desc {
+  display: block;
+  font-size: 1rem;
+  color: var(--c-black);
+  line-height: 1.55;
+}
+
+@media (min-width: 720px) {
+  .approach-list li {
+    padding: 22px 24px 22px 64px;
+  }
+
+  .approach-list__label {
+    font-size: 1.25rem;
+  }
+
+  .approach-list__desc {
+    font-size: 1.0625rem;
+  }
+}
+
+/* =========================================================
+   ENROLL CARD V2 — Premium (Taller Teórico)
+========================================================== */
+.enroll-card.enroll-card--hero {
+  background: var(--c-white);
+  border: 1px solid rgba(15, 42, 74, 0.1);
+  border-radius: 16px;
+  padding: 0;
+  margin: 32px 0 0;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+@media (min-width: 720px) {
+  .enroll-card.enroll-card--hero {
+    padding: 0;
+  }
+}
+
+.enroll-card__head {
+  text-align: center;
+  padding: 32px 24px 28px;
+  background: var(--c-white);
+  border-bottom: 1px solid rgba(15, 42, 74, 0.08);
+}
+
+@media (min-width: 720px) {
+  .enroll-card__head {
+    padding: 40px 40px 32px;
+  }
+}
+
+.enroll-card__badge {
+  display: inline-block;
+  font-family: var(--ff-sans);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: var(--c-amber);
+  color: var(--c-navy);
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin: 0 0 18px;
+}
+
+.enroll-card--hero .enroll-card__title {
+  font-family: var(--ff-serif);
+  font-weight: 700;
+  font-size: clamp(1.375rem, 1.8vw + 1rem, 2rem);
+  line-height: 1.22;
+  color: var(--c-navy);
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.enroll-card__meta {
+  font-family: var(--ff-sans);
+  font-size: 0.9375rem;
+  color: var(--c-navy);
+  opacity: 0.7;
+  margin: 0;
+}
+
+.enroll-card--hero .enroll-card__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 0;
+}
+
+@media (min-width: 820px) {
+  .enroll-card--hero .enroll-card__grid {
+    grid-template-columns: 1.15fr 1fr;
+  }
+}
+
+/* Columna IZQ: Incluye */
+.enroll-card__includes {
+  padding: 28px 24px;
+  background: var(--c-white);
+}
+
+@media (min-width: 720px) {
+  .enroll-card__includes {
+    padding: 36px 40px;
+  }
+}
+
+@media (min-width: 820px) {
+  .enroll-card__includes {
+    border-right: 1px solid rgba(15, 42, 74, 0.08);
+  }
+}
+
+.enroll-card__section-title {
+  font-family: var(--ff-sans);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-navy);
+  opacity: 0.7;
+  margin: 0 0 18px;
+}
+
+.enroll-card__section-title--light {
+  color: var(--c-amber);
+  opacity: 1;
+}
+
+.enroll-card__includes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.enroll-card__includes li {
+  position: relative;
+  padding: 2px 0 2px 34px;
+  font-family: var(--ff-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--c-black);
+}
+
+.enroll-card__includes li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--c-amber);
+}
+
+.enroll-card__includes li::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 10px;
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid var(--c-navy);
+  border-bottom: 2px solid var(--c-navy);
+  transform: rotate(-45deg);
+}
+
+/* Columna DER: Pricing hero */
+.enroll-card__pricing {
+  background: var(--c-navy);
+  color: var(--c-white);
+  padding: 32px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 720px) {
+  .enroll-card__pricing {
+    padding: 40px 36px;
+  }
+}
+
+.price-hero {
+  display: none;
+}
+
+body[data-region="AR"] .enroll-card__pricing .price-hero--ar,
+body[data-region="US"] .enroll-card__pricing .price-hero--us,
+body[data-region="MX"] .enroll-card__pricing .price-hero--mx,
+body[data-region="EU"] .enroll-card__pricing .price-hero--eu,
+body[data-region="WW"] .enroll-card__pricing .price-hero--ww {
+  display: block;
+}
+
+.price-hero__amount {
+  font-family: var(--ff-serif);
+  font-weight: 700;
+  font-size: clamp(2rem, 2vw + 1rem, 2rem);
+  line-height: 1;
+  color: var(--c-amber);
+  letter-spacing: -0.02em;
+  margin: 4px 0 6px;
+}
+
+.price-hero__currency {
+  font-family: var(--ff-sans);
+  font-size: 0.32em;
+  font-weight: 700;
+  color: var(--c-amber);
+  opacity: 0.75;
+  letter-spacing: 0.08em;
+  vertical-align: top;
+  margin-right: 8px;
+  position: relative;
+  top: 0.8em;
+}
+
+.price-hero__amount-placeholder {
+  font-family: var(--ff-serif);
+  font-weight: 700;
+  font-size: clamp(1.300rem, 2.2vw + 1rem, 2.25rem);
+  line-height: 1.15;
+  color: var(--c-amber);
+  margin: 0 0 6px;
+}
+
+.price-hero__period {
+  font-family: var(--ff-sans);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--c-white);
+  opacity: 0.88;
+  margin: 0 0 6px;
+}
+
+.price-hero__total {
+  font-family: var(--ff-sans);
+  font-size: 0.875rem;
+  color: var(--c-white);
+  opacity: 0.58;
+  margin: 0 0 24px;
+  letter-spacing: 0.02em;
+}
+
+.enroll-card--hero .enroll-card__pricing .btn {
+  margin: 6px 0 0;
+}
+
+.enroll-card__trust {
+  font-family: var(--ff-sans);
+  font-size: 0.8125rem;
+  color: var(--c-white);
+  opacity: 0.62;
+  margin: 18px 0 0;
+  line-height: 1.55;
+  display: none;
+}
+
+.enroll-card__trust strong {
+  color: var(--c-amber);
+  opacity: 0.95;
+  font-weight: 700;
+}
+
+/* Geolocated trust lines: AR ve transferencia, el resto tarjetas */
+body[data-region="AR"] .enroll-card__trust--ar {
+  display: block;
+}
+
+body[data-region="US"] .enroll-card__trust--intl,
+body[data-region="MX"] .enroll-card__trust--intl,
+body[data-region="EU"] .enroll-card__trust--intl,
+body[data-region="WW"] .enroll-card__trust--intl {
+  display: block;
+}
+
+/* =========================================================
+   ENROLL CARD — Taller Terapéutico (extensiones)
+========================================================== */
+
+/* Variante light: border navy en lugar de transparente */
+.enroll-card--hero-light {
+  border-color: var(--c-navy);
+}
+.enroll-card--hero-light .enroll-card__head {
+  border-bottom-color: rgba(15, 42, 74, 0.12);
+}
+
+/* Badge navy (para cupos limitados) */
+.enroll-card__badge--navy {
+  background: var(--c-navy);
+  color: var(--c-white);
+}
+
+/* Requisito destacado */
+.enroll-card__requisito {
+  background: rgba(15, 42, 74, 0.06);
+  border-left: 6px solid var(--c-navy);
+  padding: 14px 20px;
+  font-family: var(--ff-sans);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--c-navy);
+}
+.enroll-card__requisito strong {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Nota bajo el precio (plan cuotas) */
+.enroll-card__pricing-note {
+  font-family: var(--ff-sans);
+  font-size: 0.8125rem;
+  color: var(--c-white);
+  opacity: 0.72;
+  line-height: 1.5;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+/* Botones más chicos dentro de la pricing column */
+.enroll-card__btn-sm {
+  font-size: 1rem;
+  padding: 14px 24px;
+  min-height: 48px;
+}
+
+/* Separador "o" entre opciones de pago */
+.enroll-card__divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+.enroll-card__divider::before,
+.enroll-card__divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+.enroll-card__divider span {
+  font-family: var(--ff-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: lowercase;
+}
+
+/* Título opción pago único */
+.enroll-card__alt-title {
+  font-family: var(--ff-sans);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-amber);
+  opacity: 0.9;
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+/* Precio pago único — más compacto que el hero */
+.price-single { display: none; text-align: center; margin: 0 0 16px; }
+body[data-region="AR"] .enroll-card__pricing .price-single--ar,
+body[data-region="US"] .enroll-card__pricing .price-single--us,
+body[data-region="MX"] .enroll-card__pricing .price-single--mx,
+body[data-region="EU"] .enroll-card__pricing .price-single--eu,
+body[data-region="WW"] .enroll-card__pricing .price-single--ww { display: block; }
+
+.price-single__amount {
+  font-family: var(--ff-serif);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.25rem);
+  line-height: 1;
+  color: var(--c-amber);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.price-single__currency {
+  font-family: var(--ff-sans);
+  font-size: 0.4em;
+  font-weight: 700;
+  color: var(--c-amber);
+  opacity: 0.75;
+  letter-spacing: 0.08em;
+  vertical-align: top;
+  margin-right: 6px;
+  position: relative;
+  top: 0.6em;
+}
+
+/* Botón outline ámbar (pago completo) */
+.btn--amber-outline {
+  background: transparent;
+  color: var(--c-amber);
+  border: 2px solid var(--c-amber);
+}
+.btn--amber-outline:hover {
+  background: var(--c-amber);
+  color: var(--c-navy);
+}
+
+/* Nota trimestral solo para Argentina */
+.enroll-card__note-ar {
+  display: none;
+  font-family: var(--ff-sans);
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--c-white);
+  opacity: 0.5;
+  margin: 14px 0 0;
+  line-height: 1.45;
+  text-align: center;
+}
+body[data-region="AR"] .enroll-card__note-ar { display: block; }
+
+/* -------- SCHEDULE DENTRO DE FICHA (Terapéutico) -------- */
+.enroll-card__schedule {
+  padding: 20px 24px;
+  background: var(--c-amber);
+  color: var(--c-black);
+  font-family: var(--ff-sans);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+@media (min-width: 720px) { .enroll-card__schedule { padding: 24px 40px; } }
+.enroll-card__schedule p { margin: 0 0 6px; }
+.enroll-card__schedule p:last-of-type { margin-bottom: 0; }
+.enroll-card__schedule strong { font-weight: 700; }
+
+/* Enero (receso) en tono más claro/sutil */
+.schedule__receso {
+  font-style: italic;
+  opacity: 0.6;
+}
+
+/* Hora local dentro de ficha: sobre fondo ámbar */
+.enroll-card__schedule .schedule__local {
+  background: var(--c-navy);
+  color: var(--c-white);
+  padding: 12px 16px;
+  border-radius: 6px;
+  text-align: center;
+  margin: 14px 0 12px;
+}
+.enroll-card__schedule .schedule__heading {
+  color: rgba(0, 0, 0, 0.45);
+  margin-top: 14px;
+}
+.enroll-card__schedule .schedule__refs {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.875rem;
+}
+.enroll-card__schedule .schedule__refs strong { color: var(--c-black); }
+.enroll-card__schedule .schedule__refs span:not(:last-child)::after { color: var(--c-black); opacity: 0.3; }
+
+/* -------- LIBROS — Editorial -------- */
+.libros {
+  background: var(--c-ivory);
+  text-align: center;
+  padding: clamp(40px, 6vw, 64px) 0;
+}
+.libros .h2 { color: var(--c-navy); margin-bottom: 36px; }
+.libros__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  justify-items: center;
+}
+.libros__item {
+  display: block;
+  transition: transform 0.25s ease;
+}
+.libros__item:hover {
+  transform: scale(1.04);
+}
+.libros__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.libros__cta {
+  margin-top: 36px;
+}
+@media (max-width: 480px) {
+  .libros__grid { gap: 20px; }
+}
+
+/* -------- NOTAS DE MONEDA (*) -------- */
+.price-note {
+  display: none;
+  font-family: var(--ff-sans);
+  font-size: 0.75rem;
+  font-style: italic;
+  opacity: 0.6;
+  margin: 12px 0 0;
+  line-height: 1.4;
+  text-align: center;
+}
+body[data-region="AR"] .price-note--ar,
+body[data-region="MX"] .price-note--mx,
+body[data-region="WW"] .price-note--ww { display: block; }
+
+/* Dentro de pricing navy: color blanco */
+.enroll-card__pricing .price-note { color: var(--c-white); }
+/* Dentro de sesión (celeste): color negro */
+.sesion .price-note { color: var(--c-black); }
+
+/* -------- SESIÓN PRIVADA — card compacta -------- */
+.sesion-card {
+  background: var(--c-white);
+  border-radius: 14px;
+  padding: 24px 20px;
+  box-shadow: 0 16px 48px rgba(15, 42, 74, 0.12);
+  margin-top: 28px;
+}
+@media (min-width: 720px) { .sesion-card { padding: 28px 32px; } }
+
+.sesion-card__info {
+  margin: 0 0 16px;
+  padding: 0 0 14px;
+  border-bottom: 1px solid rgba(15, 42, 74, 0.1);
+}
+.sesion-card__info p {
+  margin: 0 0 4px;
+  font-family: var(--ff-sans);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--c-black);
+}
+.sesion-card__info p:last-child { margin-bottom: 0; }
+.sesion-card__info em { font-style: italic; opacity: 0.7; }
+
+.sesion-card__tier {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(15, 42, 74, 0.06);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.sesion-card__tier:last-of-type { border-bottom: none; }
+
+.sesion-card__tier-label {
+  font-family: var(--ff-sans);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--c-navy);
+  margin: 0;
+}
+
+.sesion-card__price {
+  font-family: var(--ff-serif);
+  font-weight: 700;
+  font-size: 1.375rem;
+  line-height: 1.1;
+  color: var(--c-navy);
+  margin: 0;
+  text-align: right;
+}
+
+.sesion-card__includes {
+  margin: 18px 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(15, 42, 74, 0.1);
+}
+.sesion-card__includes-label {
+  font-family: var(--ff-sans);
+  font-weight: 700;
+  font-size: 0.6875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-navy);
+  opacity: 0.6;
+  margin: 0 0 10px;
+}
+.sesion-card__includes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+.sesion-card__includes li {
+  position: relative;
+  padding-left: 24px;
+  font-family: var(--ff-sans);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--c-black);
+}
+.sesion-card__includes li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--c-amber);
+}
+.sesion-card__includes li::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 7px;
+  width: 8px;
+  height: 5px;
+  border-left: 1.5px solid var(--c-navy);
+  border-bottom: 1.5px solid var(--c-navy);
+  transform: rotate(-45deg);
+}
+
+.sesion-card .enroll-card__trust {
+  text-align: center;
+  color: var(--c-navy);
+  opacity: 0.55;
+}
+.sesion-card .enroll-card__trust strong { color: var(--c-navy); }
+
+/* -------- WHATSAPP FLOTANTE -------- */
+.wa-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.wa-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.32);
+}
+.wa-float svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--c-white);
+}
